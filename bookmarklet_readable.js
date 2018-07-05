@@ -4,7 +4,7 @@ let codestr = await prompt("Paste your JavaScript code here");
 
 let encd = await 'javascript:(function()%7B'+encodeURIComponent(codestr.replace(/\/\/.+?\n/g, ''))+'%7D)()';
 
-var createDiv = document.createElement("div"); //create container div
+var createDiv = document.createElement("div");
 createDiv.setAttribute("id", "popup_win");
 document.body.appendChild(createDiv);
 createDiv.style.display = "inline-block";
@@ -19,7 +19,7 @@ createDiv.style.borderRadius = "1em";
 createDiv.style.padding = "3px";
 createDiv.style.zIndex = "10000"; 
 
-var closebtn = document.createElement("button"); //create close button
+var closebtn = document.createElement("button");
 document.getElementById("popup_win").appendChild(closebtn);
 closebtn.setAttribute("id", "btn_closed");
 document.getElementById("btn_closed").innerText = "+";
@@ -34,10 +34,10 @@ closebtn.style.border = "1px";
 closebtn.style.userSelect = "none";
 closebtn.style.color = "white";
 
-var txtarea = document.createElement("textarea"); //create text area container
+var txtarea = document.createElement("textarea");
 document.getElementById("popup_win").appendChild(txtarea);
 txtarea.setAttribute("id", "txt_in");
-document.getElementById("txt_in").value = encd; //adds converted code to text area. awaits the prompt function
+document.getElementById("txt_in").value = encd;
 txtarea.style.bottom = "100px";
 txtarea.style.display = "block";
   txtarea.style.width = "100%";
